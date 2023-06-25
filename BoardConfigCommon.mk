@@ -77,7 +77,6 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
 
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6150
-TARGET_KERNEL_CONFIG := vendor/sdmsteppe-perf_defconfig
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CLANG_VERSION := r487747c
 TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/r487747c
@@ -87,6 +86,9 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
     LLVM_IAS=1
 
 KERNEL_LD := LD=ld.lld
+
+TARGET_KERNEL_CLANG_VERSION := playground
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-playground
 
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0x880000
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom androidboot.console=ttyMSM0
